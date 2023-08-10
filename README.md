@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Warehouse Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple Warehouse Management System built using ReactJS. The system consists of two pages - a warehouse listing page and a warehouse details page.
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+- ReactJS
+- HTML5
+- CSS
+- JavaScript
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository:
+   ```
+   git clone https://github.com/verdiaarul/sa_frontend
+   cd warehouse-management-system
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-### `npm test`
+3. Run the application:
+   ```
+   npm start
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Open your browser and go to [http://localhost:3000](http://localhost:3000) to access the application.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Page 1 - Warehouse Listing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- List of warehouses with search, filtering, and sorting options.
+- Search warehouses by name.
+- Filter warehouses by city, cluster, and space available limit.
+- Display warehouses in an efficient and modular way using Redux for optimized store calls.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Page 2 - Warehouse Details
 
-### `npm run eject`
+- Clicking on a warehouse redirects to the details page.
+- Edit functionality to modify warehouse information:
+  - Cluster
+  - Warehouse name
+  - City
+  - Space available
+  - Warehouse live status
+- Additional feature to add custom fields to a warehouse.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Folder Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+src/
+|-- actions/        // Redux actions
+|-- components/     // Reusable components
+|-- pages/          // Main pages of the application
+|-- reducers/       // Redux reducers
+|-- App.js           // Application entry point
+|-- index.js         // Index file
+|-- store.js         // Redux store configuration
+|-- db.json  // Sample warehouse data
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Warehouse Listing Page:**
+   - Navigate to the warehouse listing page.
+   - Search warehouses by name.
+   - Use filters to narrow down the results based on city, cluster, and space available.
 
-## Learn More
+2. **Warehouse Details Page:**
+   - Click on a warehouse to view its details.
+   - Edit the warehouse information, including cluster, name, city, space available, and live status.
+   - Add custom fields as needed.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Note
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- The application uses React Router for navigation.
+- Redux is used for state management with proper actions and reducers.
+- CSS and HTML5 are used to create the layout and styling of the application.
 
-### Code Splitting
+Feel free to explore and enhance the application further based on your requirements.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Credits
 
-### Analyzing the Bundle Size
+Warehouse data is provided in the `warehouses.json` file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*This project is for educational purposes and is not intended for production use.*
