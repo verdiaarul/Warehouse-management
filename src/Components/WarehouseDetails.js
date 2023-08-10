@@ -37,8 +37,9 @@ const WarehouseDetails = (props) => {
                 p="md"
             >
                 <Center>
-                    <Text color='white' size={22}>STOCK AREA</Text>
-                </Center>
+                    <Link to={'/'}>
+                        <Text color='white' size={22}>STOCK AREA</Text>
+                    </Link>                </Center>
             </MantineHeader>
             <Space h={'md'} />
             <Space h={'md'} />

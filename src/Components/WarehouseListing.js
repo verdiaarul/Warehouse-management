@@ -63,7 +63,10 @@ const WarehouseListing = (props) => {
                 p="md"
             >
                 <Center>
-                    <Text color='white' size={22}>STOCK AREA</Text>
+                    <Link to={'/'}>
+                        <Text color='white' size={22}>STOCK AREA</Text>
+                    </Link>
+
                 </Center>
             </MantineHeader>
             <Box sx={{ padding: 20 }}>

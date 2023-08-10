@@ -1,7 +1,7 @@
 import { Header, Title, Box, form, TextInput, Group, Button, Card, Space, Center, Grid } from '@mantine/core'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AddNewWarehouse } from '../Redux/Action';
 import { Header as MantineHeader, Text } from '@mantine/core';
 
@@ -50,7 +50,9 @@ const AddWarehouse = () => {
                 p="md"
             >
                 <Center>
-                    <Text color='white' size={22}>STOCK AREA</Text>
+                    <Link to={'/'}>
+                        <Text color='white' size={22}>STOCK AREA</Text>
+                    </Link>
                 </Center>
             </MantineHeader>
             <Space h={'md'} />

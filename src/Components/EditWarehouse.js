@@ -1,226 +1,8 @@
-// import { Header, Title, Box, form, TextInput, Group, Button, Card, Space, Center, Grid } from '@mantine/core'
-// import React, { useEffect, useState } from 'react'
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useNavigate, useParams } from 'react-router-dom';
-// import { AddNewWarehouse, FetchWarehouseObject, FunctionUpdateWarehouse } from '../Redux/Action';
-// import { Header as MantineHeader, Text } from '@mantine/core';
 
-
-// const EditWarehouse = () => {
-//     const [name, namechange] = useState('')
-//     const [code, codechange] = useState('')
-//     // const [id, idchange] = useState(0)
-//     const [city, citychange] = useState('')
-//     const [space, spacechange] = useState('')
-//     const [type, typechange] = useState('')
-//     const [cluster, clusterchange] = useState('')
-//     const [registered, registeredchange] = useState('')
-//     const [live, livechange] = useState('')
-
-//     const dispatch = useDispatch();
-//     const navigate = useNavigate();
-
-//     const { id } = useParams;
-//     const warehouseobj = useSelector((state) => state.warehouse.warehouseobj)
-
-//     const handlesubmit = (e) => {
-//         navigate('/warehouse');
-//         e.preventDefault();
-//         const warehouseobj = { name, code, city, space, type, cluster, registered, live };
-//         dispatch(FunctionUpdateWarehouse(warehouseobj));
-
-//         // console.log(warehouseobj);
-//     }
-//     // const form = useForm({
-//     //     initialValues: {
-//     //         name: "",
-//     //         code: "",
-//     //         id: "",
-//     //         city: "",
-//     //         space_available: "",
-//     //         type: "",
-//     //         cluster: '',
-//     //         is_registered: Boolean,
-//     //         is_live: Boolean
-//     //     },
-//     // });
-//     useEffect(() => {
-//         dispatch(FetchWarehouseObject(id))
-//     }, [])
-
-//     useEffect(() => {
-//         if (warehouseobj) {
-//             namechange(warehouseobj.name)
-//             codechange(warehouseobj.code)
-//             citychange(warehouseobj.city)
-//             spacechange(warehouseobj.space)
-//             typechange(warehouseobj.type)
-//             clusterchange(warehouseobj.cluster)
-//             registeredchange(warehouseobj.registered)
-//             livechange(warehouseobj.live)
-//         }
-
-//     }, [warehouseobj])
-
-//     return (
-
-//         <>
-//             <MantineHeader
-//                 sx={{ backgroundColor: "#032681", zIndex: 402 }}
-//                 height={{ base: 70, md: 70 }}
-//                 p="md"
-//             >
-//                 <Center>
-//                     <Text color='white' size={22}>STOCK AREA</Text>
-//                 </Center>
-//             </MantineHeader>
-//             <Space h={'md'} />
-//             <Space h={'md'} />
-//             <Center>
-//                 <Title>
-//                     Edit Warehouse
-//                 </Title>
-//             </Center>
-
-//             <Box maw={800} mx="auto" sx={{ alignItems: '-moz-initial', alignContent: 'left' }}>
-
-//                 <Card withBorder mt={'lg'}>
-//                     <form onSubmit={handlesubmit}>
-//                         <Grid gutter={"md"}>
-
-//                             {/* <form onSubmit={form.onSubmit((values) => console.log(values))}> */}
-//                             <Grid.Col lg={6} xs={12}>
-
-//                                 <TextInput
-//                                     withAsterisk
-//                                     label="Name"
-//                                     placeholder="Name of the warehouse"
-//                                     value={name} onChange={e => namechange(e.target.value)}
-
-//                                 // {...form.getInputProps('name')}
-//                                 />
-//                             </Grid.Col>
-
-//                             <Space h={'sm'} />
-
-//                             <Grid.Col lg={6} xs={12}>
-//                                 <TextInput
-//                                     withAsterisk
-//                                     label="Code"
-//                                     placeholder="Code of the warehouse"
-//                                     value={code} onChange={e => codechange(e.target.value)}
-
-//                                 // {...form.getInputProps('code')} 
-//                                 />
-//                             </Grid.Col>
-//                             <Space h={'sm'} />
-
-//                             <Grid.Col lg={6} xs={12}>
-//                                 <TextInput
-//                                     disabled
-//                                     withAsterisk
-//                                     label="Id"
-//                                     placeholder="Enter Id"
-//                                     value={id}
-
-//                                 // {...form.getInputProps('id')} 
-//                                 />
-//                             </Grid.Col>
-
-//                             <Space h={'sm'} />
-
-//                             <Grid.Col lg={6} xs={12}>
-//                                 <TextInput
-//                                     withAsterisk
-//                                     label="City"
-//                                     placeholder="City of the warehouse"
-//                                     value={city} onChange={e => citychange(e.target.value)}
-
-//                                 // {...form.getInputProps('city')}
-//                                 />
-//                             </Grid.Col>
-
-//                             <Space h={'sm'} />
-
-//                             <Grid.Col lg={6} xs={12}>
-//                                 <TextInput
-//                                     withAsterisk
-//                                     label="Space Available"
-//                                     value={space} onChange={e => spacechange(e.target.value)}
-
-//                                 // {...form.getInputProps('space_available')}
-//                                 />
-//                             </Grid.Col>
-
-//                             <Space h={'sm'} />
-
-//                             <Grid.Col lg={6} xs={12}>
-//                                 <TextInput
-//                                     withAsterisk
-//                                     label="Type"
-//                                     placeholder="Type of the warehouse"
-//                                     value={type} onChange={e => typechange(e.target.value)}
-
-//                                 // {...form.getInputProps('type')}
-//                                 />
-//                             </Grid.Col>
-
-//                             <Space h={'sm'} />
-
-//                             <Grid.Col lg={6} xs={12}>
-//                                 <TextInput
-//                                     withAsterisk
-//                                     label="Cluster"
-//                                     value={cluster} onChange={e => clusterchange(e.target.value)}
-
-//                                 // {...form.getInputProps('cluster')} 
-//                                 />
-//                             </Grid.Col>
-
-//                             <Space h={'sm'} />
-
-//                             <Grid.Col lg={6} xs={12}>
-//                                 <TextInput
-//                                     withAsterisk
-//                                     label="Is Registered"
-//                                     value={registered} onChange={e => registeredchange(e.target.value)}
-//                                 // {...form.getInputProps('is_registered')} 
-//                                 />
-//                             </Grid.Col>
-
-//                             <Space h={'sm'} />
-
-//                             <Grid.Col lg={6} xs={12}>
-//                                 <TextInput
-//                                     withAsterisk
-//                                     label="Is Live"
-//                                     value={live} onChange={e => livechange(e.target.value)}
-
-//                                 // {...form.getInputProps('is_live')} 
-//                                 />
-//                             </Grid.Col>
-
-//                             {/* </form> */}
-//                         </Grid>
-//                         <Space h={'sm'} />
-
-//                         <Center>
-//                             <Button type="submit" >Submit</Button>
-//                         </Center>
-//                     </form>
-//                 </Card>
-
-//             </Box >
-//         </>
-
-//     )
-// }
-
-// export default EditWarehouse
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import { Container, Text, Paper, Divider, Group, Button, Space } from '@mantine/core';
+import { Container, Text, Paper, Divider, Group, Button, Space, TextInput } from '@mantine/core';
 import { FetchWarehouseList } from '../Redux/Action';
 import { Header as MantineHeader, Center, Input, Box } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
@@ -262,7 +44,7 @@ const EditWarehouse = (props) => {
             ...warehouse,
         };
         props.updateWarehouse(updatedWarehouse);
-        navigate('/warehouse')
+        navigate('/')
         // navigate('/warehouse')
         // history.push(`/warehouse/${id}`);
     };
@@ -283,8 +65,9 @@ const EditWarehouse = (props) => {
                 p="md"
             >
                 <Center>
-                    <Text color='white' size={22}>STOCK AREA</Text>
-                </Center>
+                    <Link to={'/'}>
+                        <Text color='white' size={22}>STOCK AREA</Text>
+                    </Link>                </Center>
             </MantineHeader>
             <Space h={'md'} />
             <Space h={'md'} />
@@ -300,7 +83,7 @@ const EditWarehouse = (props) => {
                 <Input
 
                     label="Name"
-                    name="Name"
+                    name="name"
                     value={warehouse.name}
                     onChange={handleInputChange}
                 />
@@ -311,7 +94,7 @@ const EditWarehouse = (props) => {
                 </Group>
                 <Input
                     label="Code"
-                    name="Code"
+                    name="code"
                     value={warehouse.code}
                     onChange={handleInputChange}
                 />
@@ -324,7 +107,7 @@ const EditWarehouse = (props) => {
                 </Group>
                 <Input
                     label="City"
-                    name="City"
+                    name="city"
                     value={warehouse.city}
                     onChange={handleInputChange}
                 /> <Space h={'md'} />
@@ -335,7 +118,7 @@ const EditWarehouse = (props) => {
                 <Input
 
                     label="Space Available"
-                    name="Space_available"
+                    name="space_available"
                     value={warehouse.space_available}
                     onChange={handleInputChange}
                 />
@@ -349,7 +132,7 @@ const EditWarehouse = (props) => {
                 <Input
 
                     label="Type"
-                    name="Type"
+                    name="type"
                     value={warehouse.type}
                     onChange={handleInputChange}
                 />
@@ -361,7 +144,7 @@ const EditWarehouse = (props) => {
                 <Input
 
                     label="Cluster"
-                    name="Cluster"
+                    name="cluster"
                     value={warehouse.cluster}
                     onChange={handleInputChange}
                 />
@@ -375,7 +158,7 @@ const EditWarehouse = (props) => {
                 <Input
 
                     label="Is Registered"
-                    name="Is Registered"
+                    name="is_registered"
                     value={formatBooleanValue(warehouse.is_registered)}
                     onChange={handleInputChange}
                 />
@@ -386,7 +169,7 @@ const EditWarehouse = (props) => {
                 <Input
 
                     label="Is Live"
-                    name="Is Live"
+                    name="is_live"
                     value={formatBooleanValue(warehouse.is_live)}
                     onChange={handleInputChange}
                 />
