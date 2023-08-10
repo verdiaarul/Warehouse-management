@@ -13,7 +13,7 @@ This is a simple Warehouse Management System built using ReactJS. The system con
 
 1. Clone the repository:
    ```
-   git clone https://github.com/verdiaarul/sa_frontend
+   git clone https://github.com/verdiaarul/Warehouse-management
    cd warehouse-management-system
    ```
 
