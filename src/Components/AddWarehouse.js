@@ -21,26 +21,13 @@ const AddWarehouse = () => {
     const navigate = useNavigate();
 
     const handlesubmit = (e) => {
-        navigate('/warehouse');
+        navigate('/');
         e.preventDefault();
         const warehouseobj = { name, code, id, city, space, type, cluster, registered, live };
         dispatch(AddNewWarehouse(warehouseobj));
 
-        // console.log(warehouseobj);
     }
-    // const form = useForm({
-    //     initialValues: {
-    //         name: "",
-    //         code: "",
-    //         id: "",
-    //         city: "",
-    //         space_available: "",
-    //         type: "",
-    //         cluster: '',
-    //         is_registered: Boolean,
-    //         is_live: Boolean
-    //     },
-    // });
+
     return (
 
         <>
